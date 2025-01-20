@@ -1,10 +1,38 @@
-# Game Scripts
-My Game Scripts
+# Scripts
+My Utility and Game Scripts
 
-## TFC Anvil
+## Utility
+### Rust Debug Pretty Printer
+A CLI tool that pretty prints Rust Debug format output with customizable nesting depth. It properly indents nested structures and can collapse deeply nested content for better readability.
+
+#### Usage
+Basic usage:
+```bash
+# From stdin
+./rust_debug_pretty.py
+
+# From file
+./rust_debug_pretty.py input.txt
+
+# From pipe
+echo "Debug{field: value}" | ./rust_debug_pretty.py
+```
+
+Options:
+- `--max-depth` or `-d`: Maximum nesting depth before collapsing (default: 3)
+- `--indent` or `-i`: Number of spaces for each indent level (default: 2)
+
+Example with custom settings:
+```bash
+# Use 4-space indent and collapse after 2 levels
+./rust_debug_pretty.py --max-depth 2 --indent 4 input.txt
+```
+
+## Game
+### TFC Anvil
 A script that finds the shortest sequence of operations to reach the target value with an optional required ending sequence. Made for Terrafirmacraft's Anvil recipes and already has the options as default.
 
-### Usage
+#### Usage
 Basic usage:
 ```bash
 python path_finder.py TARGET
